@@ -85,7 +85,7 @@ TEST(Circle, checkWorksWithLargeFerence) {
     Circle circle(1.0);
     circle.setFerence(1000);
 
-    EXPECT_NEAR(circle.getArea(), 79577.4169, 0.01);
+    EXPECT_NEAR(circle.getArea(), 79577.4669, 0.01);
     EXPECT_NEAR(circle.getRadius(), 159.1549, 0.01);
 }
 
