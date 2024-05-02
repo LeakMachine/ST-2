@@ -27,7 +27,7 @@ TEST(Circle, checkArea) {
 TEST(Circle, checkFerence) {
     Circle circle(1.0);
 
-    EXPECT_NEAR(circle.Ference(), 6.283, 0.001);
+    EXPECT_NEAR(circle.getFerence(), 6.283, 0.001);
 }
 
 TEST(Circle, checkCannotSetNegativeArea) {
