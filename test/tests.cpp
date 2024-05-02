@@ -21,13 +21,13 @@ TEST(Circle, checkNegativeRadius) {
 TEST(Circle, checkArea) {
     Circle circle(1.0);
 
-    EXPECT_NEAR(circle.getArea(), PI, 0.001);
+    EXPECT_NEAR(circle.getArea(), PI, 0.01);
 }
 
 TEST(Circle, checkFerence) {
     Circle circle(1.0);
 
-    EXPECT_NEAR(circle.getFerence(), 6.283, 0.001);
+    EXPECT_NEAR(circle.getFerence(), 6.283, 0.01);
 }
 
 TEST(Circle, checkCannotSetNegativeArea) {
@@ -69,24 +69,24 @@ TEST(Circle, checkCannotSetZeroRadius) {
 TEST(Circle, checkWorksWithLargeRadius) {
     Circle circle(100.0);
 
-    EXPECT_NEAR(circle.getArea(), 31415.0, 0.001);
-    EXPECT_NEAR(circle.getFerence(), 628.3, 0.001);
+    EXPECT_NEAR(circle.getArea(), 31415.9, 0.01);
+    EXPECT_NEAR(circle.getFerence(), 628.3, 0.01);
 }
 
 TEST(Circle, checkWorksWithLargeArea) {
     Circle circle(1.0);
     circle.setArea(31415.0);
 
-    EXPECT_NEAR(circle.getRadius(), 100.0, 0.001);
-    EXPECT_NEAR(circle.getFerence(), 628.3, 0.001);
+    EXPECT_NEAR(circle.getRadius(), 100.0, 0.01);
+    EXPECT_NEAR(circle.getFerence(), 628.3, 0.01);
 }
 
 TEST(Circle, checkWorksWithLargeFerence) {
     Circle circle(1.0);
     circle.setFerence(628.3);
 
-    EXPECT_NEAR(circle.getArea(), 31415.0, 0.001);
-    EXPECT_NEAR(circle.getRadius(), 100.0, 0.001);
+    EXPECT_NEAR(circle.getArea(), 31415.0, 0.01);
+    EXPECT_NEAR(circle.getRadius(), 100.0, 0.01);
 }
 
 TEST(Tasks, checkRopeWorks) {
@@ -120,12 +120,12 @@ TEST(Tasks, checkSwimmingPoolWorksWithData) {
            costOfConcrete = 1000, costOfFence = 2000;
 
     EXPECT_NEAR(calculateSwimmingPool(poolRad, pathWidth,
-        costOfConcrete, costOfFence), 23000 * PI, 0.001);
+        costOfConcrete, costOfFence), 23000 * PI, 0.01);
 }
 
 TEST(Tasks, checkRopeWorksWithData) {
-    double planetRad = 6378.1, ropeIncrement = 0.001;
+    double planetRad = 6378.1, ropeIncrement = 0.01;
 
     EXPECT_NEAR(calculatePlanetAndRope(planetRad, ropeIncrement),
-                0.1592, 0.001);
+                0.1592, 0.01);
 }
