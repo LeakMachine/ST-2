@@ -6,18 +6,18 @@
 
 class Circle {
  private:
-	double radius;
-	double ference;
-	double area;
+    double radius;
+    double ference;
+    double area;
  public:
-	 Circle(double _r);
+    explicit Circle(double _r);
 
-	 void setRadius(double _rad);
-	 void setFerence(double _fer);
-	 void setArea(double _ar);
-	 double getRadius();
-	 double getFerence();
-	 double getArea();
+    void setRadius(double _rad);
+    void setFerence(double _fer);
+    void setArea(double _ar);
+    double getRadius();
+    double getFerence();
+    double getArea();
 };
 
 

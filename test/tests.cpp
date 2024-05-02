@@ -2,6 +2,7 @@
 #include <gtest/gtest.h>
 #include <cstdint>
 #include "tasks.h"
+#include "circle.h"
 #define PI 3.141592653589793238463
 
 
@@ -110,19 +111,21 @@ TEST(Tasks, checkSwimmingPoolWorks) {
 TEST(Tasks, checkSwimmingPoolWrongInput) {
     double poolRad = -1, pathWidth = 2, costOfConcrete = 3, costOfFence = 4;
 
-    EXPECT_ANY_THROW(calculateSwimmingPool(poolRad, pathWidth, 
+    EXPECT_ANY_THROW(calculateSwimmingPool(poolRad, pathWidth,
         costOfConcrete, costOfFence));
 }
 
 TEST(Tasks, checkSwimmingPoolWorksWithData) {
-    double poolRad = 3, pathWidth = 1, costOfConcrete = 1000, costOfFence = 2000;
+    double poolRad = 3, pathWidth = 1, 
+           costOfConcrete = 1000, costOfFence = 2000;
 
-    EXPECT_NEAR(calculateSwimmingPool(poolRad, pathWidth, 
+    EXPECT_NEAR(calculateSwimmingPool(poolRad, pathWidth,
         costOfConcrete, costOfFence), 23000 * PI, 0.001);
 }
 
 TEST(Tasks, checkRopeWorksWithData) {
     double planetRad = 6378.1, ropeIncrement = 0.001;
 
-    EXPECT_NEAR(calculatePlanetAndRope(planetRad, ropeIncrement), 0.1592, 0.001);
+    EXPECT_NEAR(calculatePlanetAndRope(planetRad, ropeIncrement),
+                0.1592, 0.001);
 }
