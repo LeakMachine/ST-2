@@ -19,7 +19,7 @@ double calculateSwimmingPool(double _poolRad, double _pathWidth,
     Circle pool(_poolRad);
     Circle poolWithWalkway(_poolRad + _pathWidth);
 
-    double totalCost = ((poolWithWalkway.getArea() - 
+    double totalCost = ((poolWithWalkway.getArea() -
                          pool.getArea()) * _costOfConcrete)
        + (poolWithWalkway.getFerence() * _costOfFence);
 

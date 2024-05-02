@@ -104,7 +104,7 @@ TEST(Tasks, checkRopeWrongInput) {
 TEST(Tasks, checkSwimmingPoolWorks) {
     double poolRad = 1, pathWidth = 2, costOfConcrete = 3, costOfFence = 4;
 
-    EXPECT_NO_THROW(calculateSwimmingPool(poolRad, pathWidth, 
+    EXPECT_NO_THROW(calculateSwimmingPool(poolRad, pathWidth,
         costOfConcrete, costOfFence));
 }
 
@@ -116,7 +116,7 @@ TEST(Tasks, checkSwimmingPoolWrongInput) {
 }
 
 TEST(Tasks, checkSwimmingPoolWorksWithData) {
-    double poolRad = 3, pathWidth = 1, 
+    double poolRad = 3, pathWidth = 1,
            costOfConcrete = 1000, costOfFence = 2000;
 
     EXPECT_NEAR(calculateSwimmingPool(poolRad, pathWidth,

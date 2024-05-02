@@ -1,7 +1,7 @@
 // Copyright 2022 UNN-CS
 #include <cstdint>
-#include "circle.h"
 #include <cmath>
+#include "circle.h"
 #define PI 3.141592653589793238463
 
 void recalculateRadius(double _rad, double* _fer, double* _ar) {
