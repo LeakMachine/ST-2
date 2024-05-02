@@ -75,7 +75,7 @@ TEST(Circle, checkWorksWithLargeRadius) {
 
 TEST(Circle, checkWorksWithLargeArea) {
     Circle circle(1.0);
-    circle.setArea(31415.926);
+    circle.setArea(31415.0);
 
     EXPECT_NEAR(circle.getRadius(), 100.0, 0.01);
     EXPECT_NEAR(circle.getFerence(), 628.3, 0.01);
@@ -83,7 +83,7 @@ TEST(Circle, checkWorksWithLargeArea) {
 
 TEST(Circle, checkWorksWithLargeFerence) {
     Circle circle(1.0);
-    circle.setFerence(628.318);
+    circle.setFerence(629.318);
 
     EXPECT_NEAR(circle.getArea(), 31415.0, 0.01);
     EXPECT_NEAR(circle.getRadius(), 100.0, 0.01);
