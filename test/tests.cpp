@@ -1,6 +1,128 @@
-
+// Copyright 2024 Vinokurov Ivan
 #include <gtest/gtest.h>
 #include <cstdint>
-#include "circle.h"
+#include "tasks.h"
+#define PI 3.141592653589793238463
 
 
+TEST(Circle, checkCreationWorks) {
+    EXPECT_NO_THROW(Circle(1.0));
+}
+
+TEST(Circle, checkZeroRadius) {
+    EXPECT_ANY_THROW(Circle(0.0));
+}
+
+TEST(Circle, checkNegativeRadius) {
+    EXPECT_ANY_THROW(Circle(-1.0));
+}
+
+TEST(Circle, checkArea) {
+    Circle circle(1.0);
+
+    EXPECT_NEAR(circle.getArea(), PI, 0.001);
+}
+
+TEST(Circle, checkFerence) {
+    Circle circle(1.0);
+
+    EXPECT_NEAR(circle.Ference(), 6.283, 0.001);
+}
+
+TEST(Circle, checkCannotSetNegativeArea) {
+    Circle circle(1.0);
+
+    EXPECT_ANY_THROW(circle.setArea(-1.0));
+}
+
+TEST(Circle, checkCannotSetNegativeFerence) {
+    Circle circle(1.0);
+
+    EXPECT_ANY_THROW(circle.setFerence(-1.0));
+}
+
+TEST(Circle, checkCannotSetNegativeRadius) {
+    Circle circle(1.0);
+
+    EXPECT_ANY_THROW(circle.setRadius(-1.0));
+}
+
+TEST(Circle, checkCannotSetZeroArea) {
+    Circle circle(1.0);
+
+    EXPECT_ANY_THROW(circle.setArea(0.0));
+}
+
+TEST(Circle, checkCannotSetZeroFerence) {
+    Circle circle(1.0);
+
+    EXPECT_ANY_THROW(circle.setFerence(0.0));
+}
+
+TEST(Circle, checkCannotSetZeroRadius) {
+    Circle circle(1.0);
+
+    EXPECT_ANY_THROW(circle.setRadius(0.0));
+}
+
+TEST(Circle, checkWorksWithLargeRadius) {
+    Circle circle(100.0);
+
+    EXPECT_NEAR(circle.getArea(), 31415.0, 0.001);
+    EXPECT_NEAR(circle.getFerence(), 628.3, 0.001);
+}
+
+TEST(Circle, checkWorksWithLargeArea) {
+    Circle circle(1.0);
+    circle.setArea(31415.0);
+
+    EXPECT_NEAR(circle.getRadius(), 100.0, 0.001);
+    EXPECT_NEAR(circle.getFerence(), 628.3, 0.001);
+}
+
+TEST(Circle, checkWorksWithLargeFerence) {
+    Circle circle(1.0);
+    circle.setFerence(628.3);
+
+    EXPECT_NEAR(circle.getArea(), 31415.0, 0.001);
+    EXPECT_NEAR(circle.getRadius(), 100.0, 0.001);
+}
+
+TEST(Tasks, checkRopeWorks) {
+    double planetRad = 1, ropeIncrement = 2;
+
+    EXPECT_NO_THROW(calculatePlanetAndRope(planetRad, ropeIncrement));
+}
+
+TEST(Tasks, checkRopeWrongInput) {
+    double planetRad = -1, ropeIncrement = 2;
+
+    EXPECT_ANY_THROW(calculatePlanetAndRope(planetRad, ropeIncrement));
+}
+
+TEST(Tasks, checkSwimmingPoolWorks) {
+    double poolRad = 1, pathWidth = 2, costOfConcrete = 3, costOfFence = 4;
+
+    EXPECT_NO_THROW(calculateSwimmingPool(poolRad, pathWidth, 
+        costOfConcrete, costOfFence));
+}
+
+TEST(Tasks, checkSwimmingPoolWrongInput) {
+    double poolRad = -1, pathWidth = 2, costOfConcrete = 3, costOfFence = 4;
+
+    EXPECT_ANY_THROW(calculateSwimmingPool(poolRad, pathWidth, 
+        costOfConcrete, costOfFence));
+}
+
+TEST(Tasks, checkSwimmingPoolWorksWithData) {
+    double poolRad = 3, pathWidth = 1, costOfConcrete = 1000, costOfFence = 2000;
+
+    EXPECT_NEAR(calculateSwimmingPool(poolRad, pathWidth, 
+        costOfConcrete, costOfFence), 23000 * PI, 0.001);
+}
+
+TEST(Tasks, checkRopeWorksWithData) {
+    double planetRad = 6378.1, ropeIncrement = 0.001;
+
+    EXPECT_NEAR(calculatePlanetAndRope(planetRad, ropeIncrement), 0.1592, 0.001);
+}
